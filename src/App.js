@@ -1,10 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Navbar } from './components'
+import { MDBContainer } from 'mdbreact'
+import { Navbar, UserList } from './components'
 
 const App = () => (
   <Router>
     <Navbar />
+    <MDBContainer className="mt-5">
+      <UserList />
+    </MDBContainer>
   </Router>
 )
 

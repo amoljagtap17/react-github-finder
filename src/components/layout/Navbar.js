@@ -17,7 +17,7 @@ export const Navbar = ({ icon, title }) => {
   const toggleCollapse = () => setIsOpen(prevIsOpen => !prevIsOpen)
 
   return (
-    <MDBNavbar color="danger-color-dark" dark expand="md">
+    <MDBNavbar color="danger-color-dark" dark expand="md" className="z-depth-3">
       <MDBNavbarBrand>
         <h3 className="white-text">
           <MDBIcon fab icon={icon} /> {title}
