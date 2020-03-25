@@ -1,5 +1,11 @@
 import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Navbar } from './components'
 
-const App = () => <h1>Hello From React!!!</h1>
+const App = () => (
+  <Router>
+    <Navbar />
+  </Router>
+)
 
 export default App
