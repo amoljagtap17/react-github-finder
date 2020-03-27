@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { MDBRow, MDBCol } from 'mdbreact'
+import { Spinner } from '../layout/Spinner'
 import { UserItem } from './UserItem'
 import { GithubContext } from '../../contexts'
 
@@ -9,19 +10,7 @@ export const UserList = () => {
   const { loading, users } = githubContext
 
   if (loading) {
-    return (
-      <MDBRow>
-        <MDBCol className="text-center">
-          <div
-            style={{ width: '4rem', height: '4rem' }}
-            className="spinner-border text-primary"
-            role="status"
-          >
-            <span className="sr-only">Loading...</span>
-          </div>
-        </MDBCol>
-      </MDBRow>
-    )
+    return <Spinner />
   }
 
   return (

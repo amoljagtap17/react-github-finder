@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { MDBContainer } from 'mdbreact'
 import { Home, About, FourOhFour } from './pages'
-import { Navbar, Alert } from './components'
+import { Navbar, Alert, UserInfo } from './components'
 import { AlertState, GithubState } from './contexts'
 
 const App = () => (
@@ -18,6 +18,9 @@ const App = () => (
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/user/:login">
+              <UserInfo />
             </Route>
             <Route component={FourOhFour} />
           </Switch>

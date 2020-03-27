@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCardImage,
-  MDBCardTitle
+  MDBCardTitle,
+  MDBLink
 } from 'mdbreact'
 
 export const UserItem = ({ user: { login, avatar_url } }) => {
@@ -19,9 +19,13 @@ export const UserItem = ({ user: { login, avatar_url } }) => {
       />
       <MDBCardBody>
         <MDBCardTitle>{login}</MDBCardTitle>
-        <MDBBtn href={`/user/${login}`} color="mdb-color">
+        <MDBLink
+          to={`/user/${login}`}
+          className="btn mdb-color text-white"
+          color="mdb-color"
+        >
           More
-        </MDBBtn>
+        </MDBLink>
       </MDBCardBody>
     </MDBCard>
   )
