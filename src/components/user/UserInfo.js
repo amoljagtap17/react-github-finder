@@ -87,34 +87,28 @@ export const UserInfo = () => {
               href={html_url}
               target="_blank"
               color="elegant"
-              className="m-0 my-2"
+              className="m-0 my-3"
             >
               Visit Github Profile
             </MDBBtn>
             <MDBListGroup>
-              <MDBListGroupItem>
-                {login && (
-                  <>
-                    <strong>Username: </strong> {login}
-                  </>
-                )}
-              </MDBListGroupItem>
+              {login && (
+                <MDBListGroupItem>
+                  <strong>Username: </strong> {login}
+                </MDBListGroupItem>
+              )}
 
-              <MDBListGroupItem>
-                {company && (
-                  <>
-                    <strong>Company: </strong> {company}
-                  </>
-                )}
-              </MDBListGroupItem>
+              {company && (
+                <MDBListGroupItem>
+                  <strong>Company: </strong> {company}
+                </MDBListGroupItem>
+              )}
 
-              <MDBListGroupItem>
-                {blog && (
-                  <>
-                    <strong>Website: </strong> {blog}
-                  </>
-                )}
-              </MDBListGroupItem>
+              {blog && (
+                <MDBListGroupItem>
+                  <strong>Website: </strong> {blog}
+                </MDBListGroupItem>
+              )}
             </MDBListGroup>
           </div>
         </MDBCol>

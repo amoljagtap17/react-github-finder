@@ -10,7 +10,7 @@ const App = () => (
     <AlertState>
       <Router>
         <Navbar />
-        <MDBContainer className="mt-5">
+        <MDBContainer className="mt-5 mb-5">
           <Alert />
           <Switch>
             <Route exact path="/">

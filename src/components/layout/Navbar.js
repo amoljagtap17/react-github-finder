@@ -11,7 +11,7 @@ import {
   MDBNavLink
 } from 'mdbreact'
 
-export const Navbar = ({ icon, title }) => {
+export const Navbar = ({ icon = 'github', title = 'Github Finder' }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleCollapse = () => setIsOpen(prevIsOpen => !prevIsOpen)
@@ -26,7 +26,7 @@ export const Navbar = ({ icon, title }) => {
       <MDBNavbarToggler onClick={toggleCollapse} />
       <MDBCollapse isOpen={isOpen} navbar>
         <MDBNavbarNav right>
-          <MDBNavItem>
+          <MDBNavItem active>
             <MDBNavLink to="/">Home</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
@@ -38,12 +38,7 @@ export const Navbar = ({ icon, title }) => {
   )
 }
 
-Navbar.defaultProps = {
-  title: 'Github Finder',
-  icon: 'github'
-}
-
 Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired
+  title: PropTypes.string,
+  icon: PropTypes.string
 }
