@@ -18,7 +18,9 @@ export const UserItem = ({ user: { login, avatar_url, html_url } }) => {
       />
       <MDBCardBody>
         <MDBCardTitle>{login}</MDBCardTitle>
-        <MDBBtn href={html_url}>More</MDBBtn>
+        <MDBBtn href={html_url} color="mdb-color">
+          More
+        </MDBBtn>
       </MDBCardBody>
     </MDBCard>
   )
