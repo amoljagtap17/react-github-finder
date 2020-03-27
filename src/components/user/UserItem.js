@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   MDBBtn,
   MDBCard,
@@ -7,7 +8,7 @@ import {
   MDBCardTitle
 } from 'mdbreact'
 
-export const UserItem = ({ user: { login, avatar_url, html_url } }) => {
+export const UserItem = ({ user: { login, avatar_url } }) => {
   return (
     <MDBCard className="text-center">
       <MDBCardImage
@@ -18,10 +19,14 @@ export const UserItem = ({ user: { login, avatar_url, html_url } }) => {
       />
       <MDBCardBody>
         <MDBCardTitle>{login}</MDBCardTitle>
-        <MDBBtn href={html_url} color="mdb-color">
+        <MDBBtn href={`/user/${login}`} color="mdb-color">
           More
         </MDBBtn>
       </MDBCardBody>
     </MDBCard>
   )
+}
+
+UserItem.propTypes = {
+  user: PropTypes.object.isRequired
 }

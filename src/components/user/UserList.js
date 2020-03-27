@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useContext } from 'react'
 import { MDBRow, MDBCol } from 'mdbreact'
 import { UserItem } from './UserItem'
+import { GithubContext } from '../../contexts'
 
 export const UserList = () => {
-  const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
+  const githubContext = useContext(GithubContext)
 
-  useEffect(() => {
-    const getGithubUsers = async () => {
-      const { data } = await axios.get('https://api.github.com/users')
-
-      setUsers(data)
-      setLoading(false)
-    }
-
-    getGithubUsers()
-  }, [])
+  const { loading, users } = githubContext
 
   if (loading) {
     return (

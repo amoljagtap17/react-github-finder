@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { Search, UserList } from '../components'
 
 export const Home = () => (
-  <Fragment>
-    <h1>Search</h1>
-    <h1>User List</h1>
-  </Fragment>
+  <>
+    <Search />
+    <UserList />
+  </>
 )
